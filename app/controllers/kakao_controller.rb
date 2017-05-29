@@ -6,7 +6,6 @@ class KakaoController < ApplicationController
   end
   #응답 부분
   def message
-    puts params[:user_key]
     @answer = {message: { text: params[:content].to_s+"안녕"}, keyboard: {type: :buttons , buttons: %w(김성준 김은식 임규산)}}
     render json: @answer
   end
