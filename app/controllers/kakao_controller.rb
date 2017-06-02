@@ -22,7 +22,7 @@ class KakaoController < ApplicationController
     content=content.split(':')
     user=User.find_or_create_by(username: content.first)
     Letter.create(content: content.last, user_id: user.id)
-    @answer ={message: {text: "메세지가 잘 전달되었습니다. 자신의 것을 확인하고 싶다면 밑에 링크로 접속하세요!",message_button: {label: "편지 확인 하러 가기" , url: "https://radiant-peak-48182.herokuapp.com/index"}}}
+    @answer ={message: {text: "메세지가 잘 전달되었습니다. 자신의 것을 확인하고 싶다면 밑에 링크로 접속하세요!",message_button: {label: "편지 확인 하러 가기" , url: "https://protected-inlet-51666.herokuapp.com/index"}}}
     render json: @answer
   end
   def index
