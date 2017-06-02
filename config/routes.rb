@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get '/keyboard' => 'kakao#keyboard'
 
-  post '/message' => 'kakao#message'
-
+  post '/message' => 'kakao#letter_message'
+  get '/index' => 'kakao#index'
+  get '/users' => 'kakao#users'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

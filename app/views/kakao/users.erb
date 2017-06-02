@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="page-header">
+      <h1><%=@user.username%><small> 롤링페이퍼</small></h1>
+    </div>
+    <a href="/index" class="btn btn-default" style='margin-bottom:10px'>돌아가기</a>
+    <div class="row">
+        <% @user.letters.each do |letter| %>
+            <div class="col-xs-6">
+              <div class="panel panel-default">
+                  <div class="panel-body">
+                      <%=letter.content%> <br><small>by 익명의 <%=Faker::Food.ingredient%></small>
+                  </div>
+              </div>
+        </div>
+        <% end %>
+        
+    </div>
+</div>

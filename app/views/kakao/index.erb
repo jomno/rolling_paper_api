@@ -1,0 +1,33 @@
+
+<div class="container">
+     <div class="page-header">
+      <h1>멋사<small> 롤링페이퍼</small></h1>
+    </div>
+    <form action="/users" method="GET">
+        <div class="row">
+            <input type="hidden" name="id" value="blank">
+            <div class="col-xs-6">
+              <div class="form-group">
+                <input type="text" class="form-control" name="user" placeholder="자신의 이름을 검색하세요!">
+              </div>
+            </div>
+            <div class="col-xs-6">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <% @users.each do |user| %>
+            <div class="col-xs-6">
+              <div class="panel panel-default">
+                  <a href="/users?id=<%=user.id%>">
+                      <div class="panel-body">
+                          <%=user.username%>의 방
+                      </div>
+                  </a>
+              </div>
+        </div>
+        <% end %>
+        
+    </div>
+</div>
