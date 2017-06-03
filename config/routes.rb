@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/message' => 'kakao#letter_message'
   get '/index' => 'kakao#index'
   get '/users' => 'kakao#users'
+  get '/search' => 'kakao#search'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,4 +1,5 @@
 require 'faker'
+# Faker::Config.locale = 'ko'
 class KakaoController < ApplicationController
   #defult 화면
   def keyboard
@@ -29,8 +30,10 @@ class KakaoController < ApplicationController
     #@user=User.find(params[:id])
     @users=User.all
   end
+  def search
+    @users= User.where(['username LIKE ?', "%#{params[:user]}%"])
+  end
   def users
-
     if params[:id]=="blank"
       @user=User.where(['username LIKE ?', "%#{params[:user]}%"])
       if @user.count==0
