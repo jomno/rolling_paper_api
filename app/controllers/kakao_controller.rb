@@ -34,17 +34,17 @@ class KakaoController < ApplicationController
     @users= User.where(['username LIKE ?', "%#{params[:user]}%"])
   end
   def users
-    if params[:id]=="blank"
-      @user=User.where(['username LIKE ?', "%#{params[:user]}%"])
-      if @user.count==0
-        @users=User.all
-        render 'index'
-      else
-        @user=@user.take
-        render 'users'
-      end
-    else
+    # if params[:id]=="blank"
+    #   @user=User.where(['username LIKE ?', "%#{params[:user]}%"])
+    #   if @user.count==0
+    #     @users=User.all
+    #     render 'index'
+    #   else
+    #     @user=@user.take
+    #     render 'users'
+    #   end
+    # else
       @user=User.find(params[:id])
-    end
+    # end
   end
 end
